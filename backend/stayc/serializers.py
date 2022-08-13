@@ -7,5 +7,5 @@ from .models import StayC
 class StayCSerializer(serializers.ModelSerializer):
     class Meta:
         model = StayC
-        fields = ['id', 'album', 'version', 'member', 'user']
+        fields = ['id', 'album', 'version', 'member', 'image']
         depth = 1
