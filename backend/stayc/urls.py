@@ -3,5 +3,5 @@ from stayc import views
 
 urlpatterns = [
     path('', views.user_stayc),
-    # path('<id>/', views.get_by_video_id),
+    path('all/', views.get_all_stayc),
 ]

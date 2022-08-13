@@ -9,8 +9,8 @@ from .serializers import StayCSerializer
 
 @api_view(['GET'])
 @permission_classes([AllowAny])
-def get_by_album(request, id):
-    stayc = StayC.objects.filter(album=id)
+def get_all_stayc(request):
+    stayc = StayC.objects.all()
     serializer = StayCSerializer(stayc, many=True)
     return Response(serializer.data)
 
@@ -27,6 +27,6 @@ def user_stayc(request):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     elif request.method == 'GET':
-        stayc = StayC.objects.filter(user_id=request.user.id)
+        stayc = StayC.objects.filter(id=request.user.id)
         serializer = StayCSerializer(stayc, many=True)
         return Response(serializer.data)
