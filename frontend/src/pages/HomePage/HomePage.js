@@ -1,6 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import useAuth from "../../hooks/useAuth";
+// import { ImageField } from "react-admin";
 
 import axios from "axios";
 
@@ -9,30 +10,32 @@ const HomePage = () => {
   // The "token" value is the JWT token that you will send in the header of any request requiring authentication
   //TODO: Add an AddCars Page to add a car for a logged in user's garage
   const [user, token] = useAuth();
-  const [cars, setCars] = useState([]);
+  const [stayc, setStayC] = useState([]);
 
   useEffect(() => {
-    const fetchCars = async () => {
+    const fetchStayC = async () => {
       try {
-        let response = await axios.get("http://127.0.0.1:8000/api/cars/", {
+        let response = await axios.get("http://127.0.0.1:8000/api/stayc/all/", {
           headers: {
             Authorization: "Bearer " + token,
           },
         });
-        setCars(response.data);
+        setStayC(response.data);
       } catch (error) {
         console.log(error.response.data);
       }
     };
-    fetchCars();
+    fetchStayC();
   }, [token]);
+
   return (
     <div className="container">
       <h1>Home Page for {user.username}!</h1>
-      {cars &&
-        cars.map((car) => (
-          <p key={car.id}>
-            {car.year} {car.model} {car.make}
+      {stayc &&
+        stayc.map((stayc) => (
+          <p key={stayc.id}>
+            {stayc.album} {stayc.member}{" "}
+            <img src={stayc.image} alt="" height="300" width="200" />
           </p>
         ))}
     </div>
