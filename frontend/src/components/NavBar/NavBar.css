@@ -2,6 +2,7 @@ ul {
   display: flex;
   justify-content: space-between;
   list-style-type: none;
+  align-items: center;
 }
 
 li {
@@ -30,7 +31,9 @@ li.buttons-2 {
   background: transparent;
   border: 2px solid white;
   color: white;
-  padding: 0.8rem 1.2rem;
+  padding: 1.7rem 1.2rem;
+  height: 40px;
+  width: 150px;
 }
 
 .navBar button:hover {
@@ -42,4 +45,6 @@ li.buttons-2 {
 .brand {
   cursor: pointer;
   font-size: 2rem;
+  display: flex;
+  align-items: center;
 }

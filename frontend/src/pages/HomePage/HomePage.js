@@ -2,6 +2,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import useAuth from "../../hooks/useAuth";
 // import { ImageField } from "react-admin";
+import DisplayAlbums from "../../components/DisplayAlbums/DisplayAlbums";
 
 import axios from "axios";
 
@@ -27,7 +28,12 @@ const HomePage = () => {
 
   return (
     <div className="container">
-      <h1>Home Page for {user.username}!</h1>
+      <div className="logo">
+        <img src="/stayc-60e4a84d14351.png" alt="stayc logo" width="600px" />
+      </div>
+      <div>
+        <DisplayAlbums />
+      </div>
       {/* {stayc &&
         stayc.map((stayc) => (
           <p key={stayc.id}>
