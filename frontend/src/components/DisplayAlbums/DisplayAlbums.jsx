@@ -12,7 +12,7 @@ const DisplayAlbums = (props) => {
         className="image-display"
         height="450px"
       />
-      <Link to={`/album`}>
+      <Link to={`/theme`}>
         <img
           src="/ab67616d0000b273af2fda9fb591d43c355c2ac3.png"
           alt="star to a young culture album"
