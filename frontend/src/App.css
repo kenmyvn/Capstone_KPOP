@@ -13,6 +13,23 @@
   --secondary-color: #d9ead3;
   --tertiary-color: #ead1dc;
   --success-color: #ffffff;
+  --warning-color: #b4a7d6;
+}
+
+[data-theme="asap"] {
+  --primary-color: #ffffff;
+  --secondary-color: #fff269;
+  --tertiary-color: #6fa8dc;
+  --success-color: #e06666;
+  --warning-color: #8e7cc3;
+}
+
+[data-theme="run2u"] {
+  --primary-color: #ffffff;
+  --secondary-color: #d5a6bd;
+  --tertiary-color: #bcbcbc;
+  --success-color: #cfe2f3;
+  --warning-color: #8fce00;
 }
 
 .fixed-photo {
@@ -91,4 +108,10 @@ body {
 .navBar button {
   color: var(--tertiary-color);
   background-color: var(--tertiary-color);
+}
+
+.navBar button:hover {
+  /* background: white; */
+  color: var(--warning-color);
+  cursor: pointer;
 }
