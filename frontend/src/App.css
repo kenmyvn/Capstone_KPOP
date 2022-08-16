@@ -8,6 +8,25 @@
   box-sizing: inherit;
 }
 
+:root {
+  --primary-color: #fff9e6;
+  --secondary-color: #d9ead3;
+  --tertiary-color: #ead1dc;
+  --success-color: #ffffff;
+}
+
+.fixed-photo {
+  background-image: url("/1.png");
+  height: 490px;
+  display: block;
+  position: fixed;
+  background-repeat: no-repeat;
+  bottom: 0;
+  width: 100%;
+  background-position: top center;
+  z-index: -1;
+}
+
 html {
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
@@ -55,4 +74,21 @@ button:hover {
   margin: 5px;
   padding: 3px 7px;
   font-size: 17px;
+}
+
+body {
+  background-color: var(--primary-color);
+}
+
+.navBar {
+  background-color: var(--success-color);
+}
+
+.navBar b {
+  color: var(--secondary-color);
+}
+
+.navBar button {
+  color: var(--tertiary-color);
+  background-color: var(--tertiary-color);
 }

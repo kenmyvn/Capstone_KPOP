@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import useAuth from "../../hooks/useAuth";
 // import { ImageField } from "react-admin";
 import DisplayAlbums from "../../components/DisplayAlbums/DisplayAlbums";
+import "./HomePage.css";
 
 import axios from "axios";
 
