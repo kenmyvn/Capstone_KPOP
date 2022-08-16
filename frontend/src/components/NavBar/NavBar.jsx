@@ -54,9 +54,9 @@ const Navbar = () => {
           </div>
         </li>
         <div className="buttons-space">
-          <li className="buttons-2">
+          <Link to={`/home`} className="buttons-2">
             <button>Albums</button>
-          </li>
+          </Link>
           <Link to={`/theme`} className="buttons-2">
             <button>Theme</button>
           </Link>

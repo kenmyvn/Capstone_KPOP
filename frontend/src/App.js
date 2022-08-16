@@ -30,6 +30,7 @@ function App() {
             </PrivateRoute>
           }
         />
+        <Route path="/home" element={<HomePage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/album" element={<PhotocardPage />} />
