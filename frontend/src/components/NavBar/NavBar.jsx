@@ -57,9 +57,9 @@ const Navbar = () => {
           <li className="buttons-2">
             <button>Albums</button>
           </li>
-          <li className="buttons-2">
+          <Link to={`/theme`} className="buttons-2">
             <button>Theme</button>
-          </li>
+          </Link>
           <li className="buttons-2">
             {user ? (
               <button onClick={logoutUser}>Logout</button>

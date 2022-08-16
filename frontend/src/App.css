@@ -8,37 +8,31 @@
   box-sizing: inherit;
 }
 
-/* :root {
-  --background-color-stereotype: #fff9e6;
-  --profile-color-stereotype: #d9ead3;
-  --buttons-color-sterotype: #ead1dc;
-  --navbar-color-stereotype: #ffffff;
-  --buttonshover-color-stereotype: #b4a7d6;
-
-  --background-color-asap: #ffffff;
-  --profile-color-asap: #fff269;
-  --buttons-color-asap: #6fa8dc;
-  --navbar-color-asap: #e06666;
-  --buttonshover-color-asap: #8e7cc3;
-} */
+:root {
+  --background-color: #fff9e6;
+  --profile-color: #d9ead3;
+  --buttons-color: #ead1dc;
+  --navbar-color: #ffffff;
+  --buttonshover-color: #b4a7d6;
+}
 
 body[data-theme="stereotype"] {
-  --background-color-stereotype: #fff9e6;
-  --profile-color-stereotype: #d9ead3;
-  --buttons-color-sterotype: #ead1dc;
-  --navbar-color-stereotype: #ffffff;
-  --buttonshover-color-stereotype: #b4a7d6;
+  --background-color: #fff9e6;
+  --profile-color: #d9ead3;
+  --buttons-color: #ead1dc;
+  --navbar-color: #ffffff;
+  --buttonshover-color: #b4a7d6;
 }
 
 body[data-theme="asap"] {
-  --background-color-asap: #ffffff;
-  --profile-color-asap: #fff269;
-  --buttons-color-asap: #6fa8dc;
-  --navbar-color-asap: #e06666;
-  --buttonshover-color-asap: #8e7cc3;
+  --background-color: #ffffff;
+  --profile-color: #fff269;
+  --buttons-color: #6fa8dc;
+  --navbar-color: #e06666;
+  --buttonshover-color: #8e7cc3;
 }
 
-[data-theme="run2u"] {
+body[data-theme="run2u"] {
   --primary-color: #ffffff;
   --secondary-color: #d5a6bd;
   --tertiary-color: #bcbcbc;
@@ -108,24 +102,24 @@ button:hover {
 }
 
 body {
-  background-color: var(--background-color-stereotype);
+  background-color: var(--background-color);
 }
 
 .navBar {
-  background-color: var(--navbar-color-stereotype);
+  background-color: var(--navbar-color);
 }
 
 .navBar b {
-  color: var(--profile-color-stereotype);
+  color: var(--profile-color);
 }
 
 .navBar button {
-  color: var(--buttons-color-sterotype);
-  background-color: var(--buttons-color-sterotype);
+  color: var(--buttons-color);
+  background-color: var(--buttons-color);
 }
 
 .navBar button:hover {
   /* background: white; */
-  color: var(--buttonshover-color-stereotype);
+  color: var(--buttonshover-color);
   cursor: pointer;
 }
