@@ -35,13 +35,6 @@ const HomePage = () => {
       <div>
         <DisplayAlbums />
       </div>
-      {/* {stayc &&
-        stayc.map((stayc) => (
-          <p key={stayc.id}>
-            {stayc.album} {stayc.member}{" "}
-            <img src={stayc.image} alt="" height="300" width="200" />
-          </p>
-        ))} */}
     </div>
   );
 };

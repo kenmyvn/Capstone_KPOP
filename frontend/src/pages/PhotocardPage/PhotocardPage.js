@@ -26,6 +26,18 @@ const PhotocardPage = () => {
   return (
     <div className="container">
       <h1>hi</h1>
+      {stayc &&
+        stayc.map((stayc) => (
+          <p key={stayc.id}>
+            {stayc.album} {stayc.member}{" "}
+            <img
+              src={`http://127.0.0.1:8000${stayc.image}`}
+              alt=""
+              height="300"
+              width="200"
+            />
+          </p>
+        ))}
     </div>
   );
 };
