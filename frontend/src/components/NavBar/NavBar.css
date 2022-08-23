@@ -33,6 +33,9 @@ li.buttons-2 {
   padding: 1.7rem 1.2rem;
   height: 40px;
   width: 150px;
+  font-weight: bold;
+  text-shadow: 1px 0 #fff, -1px 0 #fff, 0 1px #fff, 0 -1px #fff, 1px 1px #fff,
+    -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
 }
 
 .navBar button:hover {

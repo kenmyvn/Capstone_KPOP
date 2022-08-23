@@ -9,35 +9,27 @@
 }
 
 :root {
-  --background-color: #fff9e6;
-  --profile-color: #d9ead3;
-  --buttons-color: #ead1dc;
+  --background-color: #dadee9;
+  --text-color: #1da446;
   --navbar-color: #ffffff;
-  --buttonshover-color: #b4a7d6;
 }
 
 body[data-theme="stereotype"] {
-  --background-color: #fff9e6;
-  --profile-color: #d9ead3;
-  --buttons-color: #ead1dc;
+  --background-color: #dadee9;
+  --text-color: #1da446;
   --navbar-color: #ffffff;
-  --buttonshover-color: #b4a7d6;
 }
 
 body[data-theme="asap"] {
-  --background-color: #ffffff;
-  --profile-color: #fff269;
-  --buttons-color: #6fa8dc;
+  --background-color: #fff269;
+  --text-color: #6fa8dc;
   --navbar-color: #e06666;
-  --buttonshover-color: #8e7cc3;
 }
 
-body[data-theme="run2u"] {
-  --primary-color: #ffffff;
-  --secondary-color: #d5a6bd;
-  --tertiary-color: #bcbcbc;
-  --success-color: #cfe2f3;
-  --warning-color: #8fce00;
+body[data-theme="wnl"] {
+  --background-color: #d9ebe5;
+  --text-color: #d2463c;
+  --navbar-color: #ef7bad;
 }
 
 .fixed-photo {
@@ -63,8 +55,8 @@ p {
 
 button {
   background-color: transparent;
-  border: 2px solid steelblue;
-  color: steelblue;
+  border: 2px solid var(--text-color);
+  color: var(--text-color);
   font-size: 1rem;
   font-family: inherit;
   max-width: 100px;
@@ -110,16 +102,18 @@ body {
 }
 
 .navBar b {
-  color: var(--profile-color);
+  color: var(--text-color);
+  text-shadow: 1px 0 #fff, -1px 0 #fff, 0 1px #fff, 0 -1px #fff, 1px 1px #fff,
+    -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
 }
 
 .navBar button {
-  color: var(--buttons-color);
-  background-color: var(--buttons-color);
+  color: var(--text-color);
+  background-color: var(--text-color);
 }
 
 .navBar button:hover {
   /* background: white; */
-  color: var(--buttonshover-color);
+  color: var(--text-color);
   cursor: pointer;
 }

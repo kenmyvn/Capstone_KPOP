@@ -23,7 +23,7 @@ const Navbar = () => {
     <div className="navBar">
       <ul>
         <li className="brand">
-          <Link to="/" style={{ textDecoration: "none" }}>
+          <Link to="/profile" style={{ textDecoration: "none" }}>
             <b>PROFILE</b>
           </Link>
           <div className="Avatar">

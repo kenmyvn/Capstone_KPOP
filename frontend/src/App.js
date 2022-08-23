@@ -16,6 +16,7 @@ import Footer from "./components/Footer/Footer";
 import PrivateRoute from "./utils/PrivateRoute";
 import PhotocardPage from "./pages/PhotocardPage/PhotocardPage";
 import ThemePage from "./pages/ThemePage/ThemePage";
+import ProfilePage from "./pages/ProfilePage/ProfilePage";
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/album" element={<PhotocardPage />} />
         <Route path="/theme" element={<ThemePage />} />
+        <Route path="/profile" element={<ProfilePage />} />
       </Routes>
       <div className="fixed-photo"></div>
       <Footer />
