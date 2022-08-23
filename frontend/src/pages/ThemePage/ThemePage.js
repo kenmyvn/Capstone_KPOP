@@ -1,25 +1,13 @@
 import * as React from "react";
 import styled from "@emotion/styled";
+import ThemeButton from "../../components/ThemeButton/ThemeButton";
 
-const ThemePage = () => {
-  function ThemeToggler() {
-    const [theme, setTheme] = React.useState("");
-    const nextTheme = theme === "stereotype" ? "asap" : "stereotype";
-
-    React.useEffect(() => {
-      document.body.dataset.theme = theme;
-    }, [theme]);
-
-    return (
-      <button onClick={() => setTheme(nextTheme)}>
-        Change to {nextTheme} mode
-      </button>
-    );
-  }
-
+const ThemePage = (props) => {
   return (
     <div>
-      <ThemeToggler />
+      <ThemeButton theme="asap" setTheme={props.setTheme} />
+      <ThemeButton theme="stereotype" setTheme={props.setTheme} />
+      <ThemeButton theme="wnl" setTheme={props.setTheme} />
     </div>
   );
 };

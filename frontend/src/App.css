@@ -8,25 +8,19 @@
   box-sizing: inherit;
 }
 
-:root {
+.capstonebody[data-theme="stereotype"] {
   --background-color: #dadee9;
   --text-color: #1da446;
   --navbar-color: #ffffff;
 }
 
-body[data-theme="stereotype"] {
-  --background-color: #dadee9;
-  --text-color: #1da446;
-  --navbar-color: #ffffff;
-}
-
-body[data-theme="asap"] {
+.capstonebody[data-theme="asap"] {
   --background-color: #fff269;
   --text-color: #6fa8dc;
   --navbar-color: #e06666;
 }
 
-body[data-theme="wnl"] {
+.capstonebody[data-theme="wnl"] {
   --background-color: #d9ebe5;
   --text-color: #d2463c;
   --navbar-color: #ef7bad;
@@ -41,7 +35,7 @@ body[data-theme="wnl"] {
   bottom: 0;
   width: 100%;
   background-position: top center;
-  z-index: -1;
+  z-index: 10;
 }
 
 html {
@@ -93,8 +87,9 @@ button:hover {
   font-size: 17px;
 }
 
-body {
+.capstonebody {
   background-color: var(--background-color);
+  height: 100vh;
 }
 
 .navBar {

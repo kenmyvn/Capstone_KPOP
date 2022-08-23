@@ -1,7 +1,7 @@
 // General Imports
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
-import React from "react";
+import React, { useState } from "react";
 
 // Pages Imports
 import HomePage from "./pages/HomePage/HomePage";
@@ -19,8 +19,10 @@ import ThemePage from "./pages/ThemePage/ThemePage";
 import ProfilePage from "./pages/ProfilePage/ProfilePage";
 
 function App() {
+  const [theme, setTheme] = useState("stereotype");
+
   return (
-    <div>
+    <div className="capstonebody" data-theme={theme}>
       <Navbar />
       <Routes>
         <Route
@@ -35,7 +37,7 @@ function App() {
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/album" element={<PhotocardPage />} />
-        <Route path="/theme" element={<ThemePage />} />
+        <Route path="/theme" element={<ThemePage setTheme={setTheme} />} />
         <Route path="/profile" element={<ProfilePage />} />
       </Routes>
       <div className="fixed-photo"></div>
