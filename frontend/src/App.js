@@ -17,6 +17,7 @@ import PrivateRoute from "./utils/PrivateRoute";
 import PhotocardPage from "./pages/PhotocardPage/PhotocardPage";
 import ThemePage from "./pages/ThemePage/ThemePage";
 import ProfilePage from "./pages/ProfilePage/ProfilePage";
+import OwnedPage from "./pages/OwnedPage/OwnedPage";
 
 function App() {
   const [theme, setTheme] = useState("stereotype");
@@ -39,6 +40,7 @@ function App() {
         <Route path="/album" element={<PhotocardPage />} />
         <Route path="/theme" element={<ThemePage setTheme={setTheme} />} />
         <Route path="/profile" element={<ProfilePage />} />
+        <Route path="/owned" element={<OwnedPage />} />
       </Routes>
       <div className="fixed-photo"></div>
       <Footer />

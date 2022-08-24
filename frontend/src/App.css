@@ -8,19 +8,19 @@
   box-sizing: inherit;
 }
 
-.capstonebody[data-theme="stereotype"] {
+.capstonebody[data-theme="Stereotype"] {
   --background-color: #dadee9;
   --text-color: #1da446;
   --navbar-color: #ffffff;
 }
 
-.capstonebody[data-theme="asap"] {
+.capstonebody[data-theme="ASAP"] {
   --background-color: #fff269;
   --text-color: #6fa8dc;
   --navbar-color: #e06666;
 }
 
-.capstonebody[data-theme="wnl"] {
+.capstonebody[data-theme="We Need Love"] {
   --background-color: #d9ebe5;
   --text-color: #d2463c;
   --navbar-color: #ef7bad;

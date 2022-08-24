@@ -1,14 +1,14 @@
 import React from "react";
-// import { useEffect, useState } from "react";
-// import useAuth from "../../hooks/useAuth";
-// import axios from "axios";
+import { Link } from "react-router-dom";
 
 const ProfilePage = () => {
   return (
     <div className="container">
       <h1>hi</h1>
       <div className="profilebutton">
-        <button>Owned</button>
+        <Link to={`/owned`}>
+          <button>Owned</button>
+        </Link>
       </div>
       <div className="profilebutton">
         <button>Wish List</button>
