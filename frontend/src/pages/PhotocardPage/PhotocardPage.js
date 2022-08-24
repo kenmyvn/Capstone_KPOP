@@ -26,7 +26,6 @@ const PhotocardPage = () => {
 
   return (
     <div className="container">
-      <h1>hi</h1>
       {stayc &&
         stayc.map((stayc) => (
           <p key={stayc.id}>
