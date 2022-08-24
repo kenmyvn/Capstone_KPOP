@@ -18,9 +18,10 @@ import PhotocardPage from "./pages/PhotocardPage/PhotocardPage";
 import ThemePage from "./pages/ThemePage/ThemePage";
 import ProfilePage from "./pages/ProfilePage/ProfilePage";
 import OwnedPage from "./pages/OwnedPage/OwnedPage";
+import WishListPage from "./pages/WishListPage/WishListPage";
 
 function App() {
-  const [theme, setTheme] = useState("stereotype");
+  const [theme, setTheme] = useState("Stereotype");
 
   return (
     <div className="capstonebody" data-theme={theme}>
@@ -41,6 +42,7 @@ function App() {
         <Route path="/theme" element={<ThemePage setTheme={setTheme} />} />
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="/owned" element={<OwnedPage />} />
+        <Route path="/wish" element={<WishListPage />} />
       </Routes>
       <div className="fixed-photo"></div>
       <Footer />
