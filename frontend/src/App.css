@@ -35,7 +35,7 @@
   bottom: 0;
   width: 100%;
   background-position: top center;
-  z-index: 10;
+  z-index: 1;
 }
 
 html {
@@ -59,8 +59,7 @@ button {
 
 button:hover {
   cursor: pointer;
-  color: white;
-  background-color: steelblue;
+  background-color: white;
 }
 
 .container {
@@ -68,6 +67,8 @@ button:hover {
   max-width: 600px;
   overflow: auto;
   text-align: center;
+  position: relative;
+  z-index: 10;
 }
 
 .form {
@@ -89,7 +90,7 @@ button:hover {
 
 .capstonebody {
   background-color: var(--background-color);
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .navBar {

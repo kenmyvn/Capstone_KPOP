@@ -6,7 +6,11 @@ const ThemeButton = (props) => {
     props.setTheme(props.theme);
   }
 
-  return <button onClick={handleClick}>{props.theme}</button>;
+  return (
+    <button className="themebutton" onClick={handleClick}>
+      {props.theme}
+    </button>
+  );
 };
 
 export default ThemeButton;
