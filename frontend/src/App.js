@@ -19,6 +19,8 @@ import ThemePage from "./pages/ThemePage/ThemePage";
 import ProfilePage from "./pages/ProfilePage/ProfilePage";
 import OwnedPage from "./pages/OwnedPage/OwnedPage";
 import WishListPage from "./pages/WishListPage/WishListPage";
+import WishListMemberPage from "./pages/WishListMemberPage/WishListMemberPage";
+import OwnedMemberPage from "./pages/OwnedMemberPage/OwnedMemberPage";
 
 function App() {
   const [theme, setTheme] = useState("Stereotype");
@@ -43,6 +45,8 @@ function App() {
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="/owned" element={<OwnedPage />} />
         <Route path="/wish" element={<WishListPage />} />
+        <Route path="/wishmember" element={<WishListMemberPage />} />
+        <Route path="/ownedmember" element={<OwnedMemberPage />} />
       </Routes>
       <div className="fixed-photo"></div>
       <Footer />
