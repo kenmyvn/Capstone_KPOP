@@ -40,7 +40,7 @@ function App() {
         <Route path="/home" element={<HomePage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
-        <Route path="/album" element={<PhotocardPage />} />
+        <Route path="/album/:albumname" element={<PhotocardPage />} />
         <Route path="/theme" element={<ThemePage setTheme={setTheme} />} />
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="/owned" element={<OwnedPage />} />
