@@ -9,3 +9,4 @@ class StayC(models.Model):
     version = models.CharField(max_length=200)
     member = models.CharField(max_length=50)
     image = models.ImageField(upload_to='StayC_images')
+    # wishedowned = models.ForeignKey(WishedOwned, on_delete=models.CASCADE, null=True)

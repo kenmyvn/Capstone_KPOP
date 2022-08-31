@@ -1,11 +1,11 @@
 .stayc-img {
   border: 2px solid #e95fff;
-  /* margin-right: 50px;
-  margin-bottom: 40px; */
+  width: 30%;
 }
 
 .versions {
   display: flex;
   flex-wrap: wrap;
   padding-bottom: 20%;
+  gap: 30px;
 }

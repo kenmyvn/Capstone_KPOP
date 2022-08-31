@@ -39,16 +39,12 @@ const PhotocardPage = () => {
               return stayc.version == 1;
             })
             .map((stayc) => (
-              <p key={stayc.id}>
-                {" "}
-                <img
-                  className="stayc-img"
-                  src={`http://127.0.0.1:8000${stayc.image}`}
-                  alt=""
-                  height="300"
-                  width="200"
-                />
-              </p>
+              <img
+                key={stayc.id}
+                className="stayc-img"
+                src={`http://127.0.0.1:8000${stayc.image}`}
+                alt=""
+              />
             ))}
       </div>
       <h1 className="versionheading">version 2</h1>
@@ -59,16 +55,12 @@ const PhotocardPage = () => {
               return stayc.version == 2;
             })
             .map((stayc) => (
-              <p key={stayc.id}>
-                {" "}
-                <img
-                  className="stayc-img"
-                  src={`http://127.0.0.1:8000${stayc.image}`}
-                  alt=""
-                  height="300"
-                  width="200"
-                />
-              </p>
+              <img
+                key={stayc.id}
+                className="stayc-img"
+                src={`http://127.0.0.1:8000${stayc.image}`}
+                alt=""
+              />
             ))}
       </div>
     </div>
