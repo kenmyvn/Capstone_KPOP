@@ -5,5 +5,5 @@ from stayc.models import StayC
 # Create your models here.
 
 class StayCWant(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
-    photocard = models.ForeignKey(StayC, on_delete=models.CASCADE, null=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    photocard = models.ForeignKey(StayC, on_delete=models.CASCADE)
