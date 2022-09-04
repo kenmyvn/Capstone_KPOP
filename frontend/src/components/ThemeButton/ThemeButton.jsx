@@ -1,5 +1,6 @@
 import "./ThemeButton.css";
 import React from "react";
+import Button from "@mui/material/Button";
 
 const ThemeButton = (props) => {
   function handleClick() {
@@ -7,9 +8,9 @@ const ThemeButton = (props) => {
   }
 
   return (
-    <button className="themebutton" onClick={handleClick}>
+    <Button className="themebutton" variant="contained" onClick={handleClick}>
       {props.theme}
-    </button>
+    </Button>
   );
 };
 

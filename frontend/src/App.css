@@ -47,6 +47,17 @@ p {
   font-size: 20px;
 }
 
+.MuiButtonBase-root.MuiButton-root.MuiButton-contained.MuiButton-containedPrimary.MuiButton-sizeMedium.MuiButton-containedSizeMedium.css-sghohy-MuiButtonBase-root-MuiButton-root {
+  background-color: transparent;
+  border: 2px solid var(--text-color);
+  color: var(--text-color);
+  font-size: 1rem;
+  font-family: inherit;
+  max-width: 100px;
+  padding: 0.5rem 0.5rem;
+  font-weight: 550;
+}
+
 button {
   background-color: transparent;
   border: 2px solid var(--text-color);
@@ -55,6 +66,7 @@ button {
   font-family: inherit;
   max-width: 100px;
   padding: 0.5rem 0.5rem;
+  text-decoration: none;
 }
 
 button:hover {

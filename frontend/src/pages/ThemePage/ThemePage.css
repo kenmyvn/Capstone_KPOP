@@ -1,5 +1,12 @@
-.buttonstyle {
+.profiletheme {
+  padding-top: 10%;
   display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 3%;
   justify-content: space-evenly;
-  padding-top: 5%;
+  min-width: 30%;
+}
+
+.profiletheme a {
+  text-decoration: none;
 }

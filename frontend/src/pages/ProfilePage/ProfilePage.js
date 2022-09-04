@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Button from "@mui/material/Button";
 import "./ProfilePage.css";
 
 const ProfilePage = () => {
@@ -8,12 +9,12 @@ const ProfilePage = () => {
       <div className="buttonholder">
         <div className="profilebutton">
           <Link to={`/owned`}>
-            <button>Owned</button>
+            <Button variant="contained">Owned</Button>
           </Link>
         </div>
         <div className="profilebutton">
           <Link to={`/wish`}>
-            <button>Wish List</button>
+            <Button variant="contained">Wish List</Button>
           </Link>
         </div>
       </div>

@@ -31,7 +31,7 @@ const OwnedMemberPage = () => {
 
   return (
     <div className="container">
-      <h1 className="membername">{member}</h1>
+      <h1 className="membername">owned for {member}</h1>
       <div className="versions">
         {staychave &&
           staychave
