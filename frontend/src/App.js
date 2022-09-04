@@ -45,8 +45,8 @@ function App() {
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="/owned" element={<OwnedPage />} />
         <Route path="/wish" element={<WishListPage />} />
-        <Route path="/wishmember" element={<WishListMemberPage />} />
-        <Route path="/ownedmember" element={<OwnedMemberPage />} />
+        <Route path="/wishmember/:member" element={<WishListMemberPage />} />
+        <Route path="/ownedmember/:member" element={<OwnedMemberPage />} />
       </Routes>
       <div className="fixed-photo"></div>
       <Footer />

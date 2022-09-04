@@ -51,8 +51,9 @@ def stayc_have(request):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     elif request.method == 'GET':
         haveparam = request.GET.get('user')
+        memberparam = request.GET.get('member')
         staychaves = StayCHave.objects.filter(user=haveparam).values_list('photocard', flat=True)
-        staychave = StayC.objects.filter(pk__in=staychaves)
+        staychave = StayC.objects.filter(pk__in=staychaves, member=memberparam)
         serializer = StayCSerializer(staychave, many=True)
         return Response(serializer.data)
 
@@ -69,7 +70,8 @@ def stayc_want(request):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     elif request.method == 'GET':
         wantparam = request.GET.get('user')
+        memberparam = request.GET.get('member')
         staycwants = StayCWant.objects.filter(user=wantparam).values_list('photocard', flat=True)
-        staycwant = StayC.objects.filter(pk__in=staycwants)
+        staycwant = StayC.objects.filter(pk__in=staycwants, member=memberparam)
         serializer = StayCSerializer(staycwant, many=True)
         return Response(serializer.data)

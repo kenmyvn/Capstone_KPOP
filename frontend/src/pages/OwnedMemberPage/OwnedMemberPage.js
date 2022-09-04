@@ -3,18 +3,18 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import axios from "axios";
-// import "./PhotocardPage.css";
+import "./OwnedMemberPage.css";
 
 const OwnedMemberPage = () => {
   const [user, token] = useAuth();
-  // const { member } = useParams();
+  const { member } = useParams();
   const [staychave, setStayCHave] = useState([]);
 
   useEffect(() => {
     const fetchStayCHave = async () => {
       try {
         let response = await axios.get(
-          `http://127.0.0.1:8000/api/stayc/have/?user=1`,
+          `http://127.0.0.1:8000/api/stayc/have/?user=1&member=${member}`,
           {
             headers: {
               Authorization: "Bearer " + token,
@@ -31,7 +31,7 @@ const OwnedMemberPage = () => {
 
   return (
     <div className="container">
-      <h1>owned member page</h1>
+      <h1 className="membername">{member}</h1>
       <div className="versions">
         {staychave &&
           staychave
