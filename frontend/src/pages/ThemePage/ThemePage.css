@@ -4,9 +4,12 @@
   flex-wrap: wrap;
   padding-bottom: 3%;
   justify-content: space-evenly;
-  min-width: 30%;
 }
 
 .profiletheme a {
   text-decoration: none;
+}
+
+.buttontheme {
+  margin-top: 10rem;
 }

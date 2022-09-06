@@ -6,6 +6,7 @@ import "./ProfilePage.css";
 const ProfilePage = () => {
   return (
     <div className="container">
+      <h1 className="profileheading">hello</h1>
       <div className="buttonholder">
         <div className="profilebutton">
           <Link to={`/owned`}>

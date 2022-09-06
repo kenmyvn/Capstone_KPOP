@@ -2,9 +2,11 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  margin-top: 13rem;
 }
 
 .membername {
   padding-top: 5%;
   padding-bottom: 5%;
+  margin-top: 15rem;
 }
