@@ -60,6 +60,11 @@ p {
   width: 10rem;
 }
 
+/* .filled-search.searchbar {
+  border-color: var(--text-color);
+  border-width: 2px;
+} */
+
 button {
   background-color: transparent;
   border: 2px solid var(--text-color);

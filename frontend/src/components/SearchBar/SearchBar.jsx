@@ -1,16 +1,16 @@
 import React from "react";
 import { MDBCol, MDBIcon } from "mdbreact";
-import "./SearchBar.css";
 import TextField from "@mui/material/TextField";
 
 const SearchBar = ({ userInput, setUserInput }) => {
   return (
     <TextField
       id="filled-search"
-      className="album-search -form-control form-control-sm ml-3 w-75"
+      className="searchbar"
       label="Search For An Album"
       type="search"
       placeholder="Search"
+      variant="filled"
       value={userInput}
       onChange={(e) => setUserInput(e.target.value)}
     />
