@@ -47,7 +47,7 @@ const PhotocardPage = () => {
               />
             ))}
       </div>
-      <h1 className="versionheading">version 2</h1>
+      <h1 className="versionheading2">version 2</h1>
       <div className="versions">
         {stayc &&
           stayc
