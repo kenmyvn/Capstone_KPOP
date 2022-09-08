@@ -60,6 +60,14 @@ p {
   width: 10rem;
 }
 
+.searchbar .css-19mk8g1-MuiInputBase-root-MuiFilledInput-root:after {
+  border-bottom: 2px solid var(--text-color);
+}
+
+.searchbar .MuiFormLabel-root.Mui-focused {
+  color: var(--text-color);
+}
+
 button {
   background-color: transparent;
   border: 2px solid var(--text-color);
