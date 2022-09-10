@@ -32,7 +32,7 @@ const PhotocardPage = () => {
 
   return (
     <div className="container">
-      <h1 className="versionheading">version 1</h1>
+      <h1 className="versionheading"></h1>
       <div className="versions">
         {stayc &&
           stayc
@@ -41,7 +41,6 @@ const PhotocardPage = () => {
             })
             .map((stayc) => <DisplayPhotocard image={stayc} />)}
       </div>
-      <h1 className="versionheading2">version 2</h1>
       <div className="versions">
         {stayc &&
           stayc

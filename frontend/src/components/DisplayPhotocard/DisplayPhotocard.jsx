@@ -1,12 +1,12 @@
 import "./DisplayPhotocard.css";
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Button from "@mui/material/Button";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import StarIcon from "@mui/icons-material/Star";
 
 const DisplayPhotocard = (props) => {
-  const [isHovered, setHover] = useState(false);
+  const [isHovered, setHover] = React.useState(false);
 
   return (
     <div
