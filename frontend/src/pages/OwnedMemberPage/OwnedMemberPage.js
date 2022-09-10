@@ -14,7 +14,7 @@ const OwnedMemberPage = () => {
     const fetchStayCHave = async () => {
       try {
         let response = await axios.get(
-          `http://127.0.0.1:8000/api/stayc/have/?user=1&member=${member}`,
+          `http://127.0.0.1:8000/api/stayc/have/?user=${user.id}&member=${member}`,
           {
             headers: {
               Authorization: "Bearer " + token,

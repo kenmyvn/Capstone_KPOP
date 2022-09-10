@@ -1,0 +1,22 @@
+.photocardcontainer {
+  width: 30%;
+  position: relative;
+}
+
+.stayc-img {
+  border: 2px solid #e95fff;
+  border-radius: 20px;
+  width: 100%;
+}
+
+.bttncontainer {
+  top: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+}
+
+span.MuiButton-startIcon.MuiButton-iconSizeMedium.css-1d6wzja-MuiButton-startIcon {
+  margin: 0;
+}
