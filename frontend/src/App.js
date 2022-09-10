@@ -1,7 +1,10 @@
 // General Imports
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useParams } from "react-router-dom";
 import "./App.css";
-import React, { useState } from "react";
+import AuthContext from "./context/AuthContext";
+import useAuth from "./hooks/useAuth";
+import React, { useState, useContext } from "react";
+import axios from "axios";
 
 // Pages Imports
 import HomePage from "./pages/HomePage/HomePage";
@@ -24,6 +27,55 @@ import OwnedMemberPage from "./pages/OwnedMemberPage/OwnedMemberPage";
 
 function App() {
   const [theme, setTheme] = useState("Stereotype");
+  const [user, token] = useAuth();
+  const auth = useContext(AuthContext);
+  const { member } = useParams();
+  const [wantstayc, setWantStayC] = useState([]);
+  const [havestayc, setHaveStayC] = useState([]);
+
+  const putWantStayC = async (id) => {
+    let wantStayC = {
+      user: user.id,
+      photocard: id,
+    };
+    const config = {
+      headers: {
+        Authorization: `Bearer ${auth.token}`,
+      },
+    };
+    try {
+      let response = await axios.post(
+        `http://127.0.0.1:8000/api/stayc/want/?user=${user.id}&member=${member}`,
+        wantStayC,
+        config
+      );
+      setWantStayC([...wantstayc, response.data]);
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+
+  const putHaveStayC = async (id) => {
+    let haveStayC = {
+      user: user.id,
+      photocard: id,
+    };
+    const config = {
+      headers: {
+        Authorization: `Bearer ${auth.token}`,
+      },
+    };
+    try {
+      let response = await axios.post(
+        `http://127.0.0.1:8000/api/stayc/have/?user=${user.id}&member=${member}`,
+        haveStayC,
+        config
+      );
+      setHaveStayC([...havestayc, response.data]);
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
 
   return (
     <div className="capstonebody" data-theme={theme}>
@@ -40,13 +92,37 @@ function App() {
         <Route path="/home" element={<HomePage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
-        <Route path="/album/:albumname" element={<PhotocardPage />} />
+        <Route
+          path="/album/:albumname"
+          element={
+            <PhotocardPage
+              putWantStayC={putWantStayC}
+              putHaveStayC={putHaveStayC}
+            />
+          }
+        />
         <Route path="/theme" element={<ThemePage setTheme={setTheme} />} />
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="/owned" element={<OwnedPage />} />
         <Route path="/wish" element={<WishListPage />} />
-        <Route path="/wishmember/:member" element={<WishListMemberPage />} />
-        <Route path="/ownedmember/:member" element={<OwnedMemberPage />} />
+        <Route
+          path="/wishmember/:member"
+          element={
+            <WishListMemberPage
+              putWantStayC={putWantStayC}
+              putHaveStayC={putHaveStayC}
+            />
+          }
+        />
+        <Route
+          path="/ownedmember/:member"
+          element={
+            <OwnedMemberPage
+              putWantStayC={putWantStayC}
+              putHaveStayC={putHaveStayC}
+            />
+          }
+        />
       </Routes>
       <div className="fixed-photo"></div>
       <Footer />
