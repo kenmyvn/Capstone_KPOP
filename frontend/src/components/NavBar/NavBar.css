@@ -31,7 +31,6 @@ li.buttons-2 {
 .navBar button {
   background: transparent;
   border: transparent;
-  /* color: white; */
   padding: 1.7rem 1.2rem;
   height: 40px;
   width: 150px;
@@ -41,8 +40,6 @@ li.buttons-2 {
 }
 
 .navBar button:hover {
-  /* background: white; */
-  /* color: steelblue; */
   cursor: pointer;
 }
 

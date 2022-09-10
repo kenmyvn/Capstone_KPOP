@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import axios from "axios";
 import "./OwnedMemberPage.css";
+import DisplayPhotocard from "../../components/DisplayPhotocard/DisplayPhotocard";
 
 const OwnedMemberPage = () => {
   const [user, token] = useAuth();
@@ -37,14 +38,7 @@ const OwnedMemberPage = () => {
             .filter((staychave) => {
               return staychave;
             })
-            .map((stayc) => (
-              <img
-                key={stayc.id}
-                className="stayc-img"
-                src={`http://127.0.0.1:8000${stayc.image}`}
-                alt=""
-              />
-            ))}
+            .map((stayc) => <DisplayPhotocard image={stayc} />)}
       </div>
     </div>
   );

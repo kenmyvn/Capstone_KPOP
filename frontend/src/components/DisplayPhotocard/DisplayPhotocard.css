@@ -20,6 +20,7 @@ span.MuiButton-startIcon.MuiButton-iconSizeMedium.css-1d6wzja-MuiButton-startIco
   border: 2px solid var(--text-color);
   border-radius: 20px;
   width: 100%;
+  box-shadow: 0 3px 8px rgb(0 0 0 / 32%);
 }
 
 .pcbutton .css-1d6wzja-MuiButton-startIcon > *:nth-of-type(1) {
