@@ -1,5 +1,12 @@
 .membername {
   padding-top: 5%;
   padding-bottom: 10%;
+}
+
+.versionswish {
   margin-top: 15rem;
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 20%;
+  gap: 30px;
 }

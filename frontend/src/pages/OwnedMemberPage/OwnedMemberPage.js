@@ -31,8 +31,7 @@ const OwnedMemberPage = () => {
 
   return (
     <div className="container">
-      <h1 className="membername">owned for {member}</h1>
-      <div className="versions">
+      <div className="versionsown">
         {staychave &&
           staychave
             .filter((staychave) => {
