@@ -1,12 +1,22 @@
 import "./DisplayPhotocard.css";
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Button from "@mui/material/Button";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import StarIcon from "@mui/icons-material/Star";
 
 const DisplayPhotocard = (props) => {
-  const [isHovered, setHover] = React.useState(false);
+  const [isHovered, setHover] = useState(false);
+
+  function handleWantClick(event) {
+    event.preventDefault();
+    props.createWant(props.image.id);
+  }
+
+  function handleHaveClick(event) {
+    event.preventDefault();
+    props.createHave(props.image.id);
+  }
 
   return (
     <div
@@ -22,8 +32,16 @@ const DisplayPhotocard = (props) => {
       />
       {isHovered && (
         <div className="bttncontainer">
-          <Button className="pcbutton" startIcon={<FavoriteIcon />}></Button>
-          <Button className="pcbutton" startIcon={<StarIcon />}></Button>
+          <Button
+            onClick={handleWantClick}
+            className="pcbutton"
+            startIcon={<FavoriteIcon />}
+          ></Button>
+          <Button
+            onClick={handleHaveClick}
+            className="pcbutton"
+            startIcon={<StarIcon />}
+          ></Button>
         </div>
       )}
     </div>

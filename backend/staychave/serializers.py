@@ -8,4 +8,4 @@ class StayCHaveSerializer(serializers.ModelSerializer):
     class Meta:
         model = StayCHave
         fields = ['id', 'user', 'photocard']
-        depth = 1
+        # depth = 1

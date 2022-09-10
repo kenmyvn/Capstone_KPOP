@@ -38,7 +38,7 @@ const OwnedMemberPage = () => {
             .filter((staychave) => {
               return staychave;
             })
-            .map((stayc) => <DisplayPhotocard image={stayc} />)}
+            .map((stayc) => <DisplayPhotocard image={stayc} key={stayc.id} />)}
       </div>
     </div>
   );

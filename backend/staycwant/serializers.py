@@ -8,4 +8,4 @@ class StayCWantSerializer(serializers.ModelSerializer):
     class Meta:
         model = StayCWant
         fields = ['id', 'user', 'photocard']
-        depth = 1
+        # depth = 1

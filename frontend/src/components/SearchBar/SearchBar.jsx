@@ -1,5 +1,4 @@
 import React from "react";
-import { MDBCol, MDBIcon } from "mdbreact";
 import TextField from "@mui/material/TextField";
 
 const SearchBar = ({ userInput, setUserInput }) => {

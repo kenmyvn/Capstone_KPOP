@@ -14,7 +14,7 @@ const DisplayAlbums = (props) => {
         })
         .map((album) => {
           return (
-            <Link to={album.link}>
+            <Link to={album.link} key={album.id}>
               <img
                 src={album.image}
                 alt={album.alt}
