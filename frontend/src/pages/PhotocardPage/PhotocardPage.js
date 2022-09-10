@@ -1,7 +1,8 @@
 import React from "react";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
+import AuthContext from "../../context/AuthContext";
 import axios from "axios";
 import "./PhotocardPage.css";
 import DisplayPhotocard from "../../components/DisplayPhotocard/DisplayPhotocard";
@@ -9,6 +10,7 @@ import DisplayPhotocard from "../../components/DisplayPhotocard/DisplayPhotocard
 const PhotocardPage = (props) => {
   const [token] = useAuth();
   const { albumname } = useParams();
+  const auth = useContext(AuthContext);
   const [stayc, setStayC] = useState([]);
 
   useEffect(() => {
@@ -21,7 +23,7 @@ const PhotocardPage = (props) => {
         `http://127.0.0.1:8000/api/stayc/album/?album=${albumname}`,
         {
           headers: {
-            Authorization: "Bearer " + token,
+            Authorization: `Bearer ${auth.token}`,
           },
         }
       );
