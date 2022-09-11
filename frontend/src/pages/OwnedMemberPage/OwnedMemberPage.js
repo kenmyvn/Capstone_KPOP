@@ -6,7 +6,7 @@ import axios from "axios";
 import "./OwnedMemberPage.css";
 import DisplayPhotocard from "../../components/DisplayPhotocard/DisplayPhotocard";
 
-const OwnedMemberPage = () => {
+const OwnedMemberPage = (props) => {
   const [user, token] = useAuth();
   const { member } = useParams();
   const [staychave, setStayCHave] = useState([]);
@@ -38,7 +38,17 @@ const OwnedMemberPage = () => {
             .filter((staychave) => {
               return staychave;
             })
-            .map((stayc) => <DisplayPhotocard image={stayc} key={stayc.id} />)}
+            .map((stayc) => (
+              <DisplayPhotocard
+                image={stayc}
+                key={stayc.id}
+                status="have"
+                createWant={props.putWantStayC}
+                createHave={props.putHaveStayC}
+                deleteHave={props.deleteHaveStayC}
+                deleteWant={props.deleteWantStayC}
+              />
+            ))}
       </div>
     </div>
   );

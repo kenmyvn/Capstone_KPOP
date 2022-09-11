@@ -77,6 +77,48 @@ function App() {
     }
   };
 
+  const deleteHaveStayC = async (id) => {
+    let deleteStayC = {
+      user: user.id,
+      photocard: id,
+    };
+    const config = {
+      headers: {
+        Authorization: `Bearer ${auth.token}`,
+      },
+    };
+    try {
+      let response = await axios.delete(
+        `http://127.0.0.1:8000/api/stayc/have/?user=${user.id}&member=${member}`,
+        deleteStayC,
+        config
+      );
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+
+  const deleteWantStayC = async (id) => {
+    let deleteStayC = {
+      user: user.id,
+      photocard: id,
+    };
+    const config = {
+      headers: {
+        Authorization: `Bearer ${auth.token}`,
+      },
+    };
+    try {
+      let response = await axios.delete(
+        `http://127.0.0.1:8000/api/stayc/want/?user=${user.id}&member=${member}`,
+        deleteStayC,
+        config
+      );
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+
   return (
     <div className="capstonebody" data-theme={theme}>
       <Navbar />
@@ -98,6 +140,8 @@ function App() {
             <PhotocardPage
               putWantStayC={putWantStayC}
               putHaveStayC={putHaveStayC}
+              deleteHaveStayC={deleteHaveStayC}
+              deleteWantStayC={deleteWantStayC}
             />
           }
         />
@@ -111,6 +155,8 @@ function App() {
             <WishListMemberPage
               putWantStayC={putWantStayC}
               putHaveStayC={putHaveStayC}
+              deleteHaveStayC={deleteHaveStayC}
+              deleteWantStayC={deleteWantStayC}
             />
           }
         />
@@ -120,6 +166,8 @@ function App() {
             <OwnedMemberPage
               putWantStayC={putWantStayC}
               putHaveStayC={putHaveStayC}
+              deleteHaveStayC={deleteHaveStayC}
+              deleteWantStayC={deleteWantStayC}
             />
           }
         />

@@ -31,6 +31,14 @@ button.pcbutton {
   color: var(--text-color);
 }
 
+.pc-want button.want-button {
+  color: var(--navbar-color);
+}
+
+.pc-have button.have-button {
+  color: var(--navbar-color);
+}
+
 .stayc-img:hover {
   opacity: 0.8;
 }

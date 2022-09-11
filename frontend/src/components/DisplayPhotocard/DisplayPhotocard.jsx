@@ -10,17 +10,41 @@ const DisplayPhotocard = (props) => {
 
   function handleWantClick(event) {
     event.preventDefault();
-    props.createWant(props.image.id);
+    if ((props.status = "")) {
+      props.createWant(props.image.id);
+    }
+    // else if (props.status = "want") {
+    //   props.deleteWant(props.image.id);
+    // }
+    // else {
+    //   props.deleteHave(props.image.id);
+    //   props.createWant(props.image.id);
+    // }
   }
 
   function handleHaveClick(event) {
     event.preventDefault();
-    props.createHave(props.image.id);
+    if ((props.status = "")) {
+      props.createHave(props.image.id);
+    }
+    // else if (props.status = "have") {
+    //   props.deleteHave(props.image.id);
+    // }
+    // else {
+    //   props.deleteWant(props.image.id);
+    //   props.createHave(props.image.id);
+    // }
   }
 
   return (
     <div
-      className="photocardcontainer"
+      className={`photocardcontainer ${
+        props.status == "want"
+          ? "pc-want"
+          : props.status == "have"
+          ? "pc-have"
+          : ""
+      }`}
       onMouseOver={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
     >
@@ -34,12 +58,12 @@ const DisplayPhotocard = (props) => {
         <div className="bttncontainer">
           <Button
             onClick={handleWantClick}
-            className="pcbutton"
+            className="pcbutton want-button"
             startIcon={<FavoriteIcon />}
           ></Button>
           <Button
             onClick={handleHaveClick}
-            className="pcbutton"
+            className="pcbutton have-button"
             startIcon={<StarIcon />}
           ></Button>
         </div>

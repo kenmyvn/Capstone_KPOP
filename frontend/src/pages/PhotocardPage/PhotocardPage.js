@@ -8,13 +8,17 @@ import "./PhotocardPage.css";
 import DisplayPhotocard from "../../components/DisplayPhotocard/DisplayPhotocard";
 
 const PhotocardPage = (props) => {
-  const [token] = useAuth();
-  const { albumname } = useParams();
+  const [user, token] = useAuth();
+  const { albumname, member } = useParams();
   const auth = useContext(AuthContext);
   const [stayc, setStayC] = useState([]);
+  const [staychave, setStayCHave] = useState([]);
+  const [staycwant, setStayCWant] = useState([]);
 
   useEffect(() => {
     fetchStayC();
+    fetchStayCHave();
+    fetchStayCWant();
   }, [token]);
 
   const fetchStayC = async () => {
@@ -28,6 +32,40 @@ const PhotocardPage = (props) => {
         }
       );
       setStayC(response.data);
+    } catch (error) {
+      console.log(error.response.data);
+    }
+  };
+
+  const fetchStayCHave = async () => {
+    try {
+      let response = await axios.get(
+        `http://127.0.0.1:8000/api/stayc/have/all/?user=${user.id}`,
+        {
+          headers: {
+            Authorization: "Bearer " + token,
+          },
+        }
+      );
+      const haveIds = response.data.map((have) => have.id);
+      setStayCHave(haveIds);
+    } catch (error) {
+      console.log(error.response.data);
+    }
+  };
+
+  const fetchStayCWant = async () => {
+    try {
+      let response = await axios.get(
+        `http://127.0.0.1:8000/api/stayc/want/all/?user=${user.id}`,
+        {
+          headers: {
+            Authorization: "Bearer " + token,
+          },
+        }
+      );
+      const wantIds = response.data.map((want) => want.id);
+      setStayCWant(wantIds);
     } catch (error) {
       console.log(error.response.data);
     }
@@ -47,7 +85,16 @@ const PhotocardPage = (props) => {
                 image={stayc}
                 createWant={props.putWantStayC}
                 createHave={props.putHaveStayC}
+                deleteHave={props.deleteHaveStayC}
+                deleteWant={props.deleteWantStayC}
                 key={stayc.id}
+                status={
+                  staychave.includes(stayc.id)
+                    ? "have"
+                    : staycwant.includes(stayc.id)
+                    ? "want"
+                    : ""
+                }
               />
             ))}
       </div>
@@ -62,7 +109,16 @@ const PhotocardPage = (props) => {
                 image={stayc}
                 createWant={props.putWantStayC}
                 createHave={props.putHaveStayC}
+                deleteHave={props.deleteHaveStayC}
+                deleteWant={props.deleteWantStayC}
                 key={stayc.id}
+                status={
+                  staychave.includes(stayc.id)
+                    ? "have"
+                    : staycwant.includes(stayc.id)
+                    ? "want"
+                    : ""
+                }
               />
             ))}
       </div>

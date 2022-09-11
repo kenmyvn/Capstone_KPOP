@@ -6,7 +6,7 @@ import axios from "axios";
 import "./WishListMemberPage.css";
 import DisplayPhotocard from "../../components/DisplayPhotocard/DisplayPhotocard";
 
-const OwnedMemberPage = () => {
+const OwnedMemberPage = (props) => {
   const [user, token] = useAuth();
   const { member } = useParams();
   const [staycwant, setStayCWant] = useState([]);
@@ -38,7 +38,17 @@ const OwnedMemberPage = () => {
             .filter((staycwant) => {
               return staycwant;
             })
-            .map((stayc) => <DisplayPhotocard image={stayc} key={stayc.id} />)}
+            .map((stayc) => (
+              <DisplayPhotocard
+                image={stayc}
+                key={stayc.id}
+                status="want"
+                createWant={props.putWantStayC}
+                createHave={props.putHaveStayC}
+                deleteHave={props.deleteHaveStayC}
+                deleteWant={props.deleteWantStayC}
+              />
+            ))}
       </div>
     </div>
   );

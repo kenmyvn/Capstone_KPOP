@@ -38,7 +38,7 @@ def user_stayc(request):
         serializer = StayCSerializer(stayc, many=True)
         return Response(serializer.data)
 
-@api_view(['GET', 'POST'])
+@api_view(['GET', 'POST', 'DELETE'])
 @permission_classes([IsAuthenticated])
 def stayc_have(request):
     print(
@@ -57,7 +57,7 @@ def stayc_have(request):
         serializer = StayCSerializer(staychave, many=True)
         return Response(serializer.data)
 
-@api_view(['GET', 'POST'])
+@api_view(['GET', 'POST', 'DELETE'])
 @permission_classes([IsAuthenticated])
 def stayc_want(request):
     print(
@@ -75,3 +75,24 @@ def stayc_want(request):
         staycwant = StayC.objects.filter(pk__in=staycwants, member=memberparam)
         serializer = StayCSerializer(staycwant, many=True)
         return Response(serializer.data)
+    elif request.method == 'DELETE':
+        staycwant.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
+
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def all_want(request):
+    wantparam = request.GET.get('user')
+    staycwants = StayCWant.objects.filter(user=wantparam).values_list('photocard', flat=True)
+    staycwant = StayC.objects.filter(pk__in=staycwants)
+    serializer = StayCSerializer(staycwant, many=True)
+    return Response(serializer.data)
+
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def all_have(request):
+    haveparam = request.GET.get('user')
+    staychaves = StayCHave.objects.filter(user=haveparam).values_list('photocard', flat=True)
+    staychave = StayC.objects.filter(pk__in=staychaves)
+    serializer = StayCSerializer(staychave, many=True)
+    return Response(serializer.data)

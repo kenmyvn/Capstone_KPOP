@@ -7,5 +7,7 @@ urlpatterns = [
     path('album/', views.user_stayc),
     path('have/', views.stayc_have),
     path('want/', views.stayc_want),
+    path('have/all/', views.all_have),
+    path('want/all/', views.all_want),
     # path('/StayC_images/')
 ]
