@@ -8,32 +8,32 @@ import StarIcon from "@mui/icons-material/Star";
 const DisplayPhotocard = (props) => {
   const [isHovered, setHover] = useState(false);
 
-  function handleWantClick(event) {
+  async function handleWantClick(event) {
     event.preventDefault();
-    if ((props.status = "")) {
+    if (props.status == "") {
+      props.createWant(props.image.id);
+    } else if (props.status == "want") {
+      props.deleteWant(props.image.id);
+    } else {
+      props.deleteHave(props.image.id);
       props.createWant(props.image.id);
     }
-    // else if (props.status = "want") {
-    //   props.deleteWant(props.image.id);
-    // }
-    // else {
-    //   props.deleteHave(props.image.id);
-    //   props.createWant(props.image.id);
-    // }
+    await new Promise((resolve) => setTimeout(resolve, 250));
+    props.refresh();
   }
 
-  function handleHaveClick(event) {
+  async function handleHaveClick(event) {
     event.preventDefault();
-    if ((props.status = "")) {
+    if (props.status == "") {
+      props.createHave(props.image.id);
+    } else if (props.status == "have") {
+      props.deleteHave(props.image.id);
+    } else {
+      props.deleteWant(props.image.id);
       props.createHave(props.image.id);
     }
-    // else if (props.status = "have") {
-    //   props.deleteHave(props.image.id);
-    // }
-    // else {
-    //   props.deleteWant(props.image.id);
-    //   props.createHave(props.image.id);
-    // }
+    await new Promise((resolve) => setTimeout(resolve, 250));
+    props.refresh();
   }
 
   return (

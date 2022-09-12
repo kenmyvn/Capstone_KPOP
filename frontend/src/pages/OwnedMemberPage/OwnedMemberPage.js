@@ -12,23 +12,24 @@ const OwnedMemberPage = (props) => {
   const [staychave, setStayCHave] = useState([]);
 
   useEffect(() => {
-    const fetchStayCHave = async () => {
-      try {
-        let response = await axios.get(
-          `http://127.0.0.1:8000/api/stayc/have/?user=${user.id}&member=${member}`,
-          {
-            headers: {
-              Authorization: "Bearer " + token,
-            },
-          }
-        );
-        setStayCHave(response.data);
-      } catch (error) {
-        console.log(error.response.data);
-      }
-    };
     fetchStayCHave();
   }, [token]);
+
+  const fetchStayCHave = async () => {
+    try {
+      let response = await axios.get(
+        `http://127.0.0.1:8000/api/stayc/have/?user=${user.id}&member=${member}`,
+        {
+          headers: {
+            Authorization: "Bearer " + token,
+          },
+        }
+      );
+      setStayCHave(response.data);
+    } catch (error) {
+      console.log(error.response.data);
+    }
+  };
 
   return (
     <div className="container">
@@ -47,6 +48,7 @@ const OwnedMemberPage = (props) => {
                 createHave={props.putHaveStayC}
                 deleteHave={props.deleteHaveStayC}
                 deleteWant={props.deleteWantStayC}
+                refresh={fetchStayCHave}
               />
             ))}
       </div>

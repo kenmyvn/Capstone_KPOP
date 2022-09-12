@@ -56,6 +56,12 @@ def stayc_have(request):
         staychave = StayC.objects.filter(pk__in=staychaves, member=memberparam)
         serializer = StayCSerializer(staychave, many=True)
         return Response(serializer.data)
+    elif request.method == 'DELETE':
+        userid = request.GET.get('user')
+        cardid = request.GET.get('card')
+        toDelete = StayCHave.objects.filter(user=userid, photocard_id=cardid)
+        toDelete.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
 
 @api_view(['GET', 'POST', 'DELETE'])
 @permission_classes([IsAuthenticated])
@@ -76,7 +82,10 @@ def stayc_want(request):
         serializer = StayCSerializer(staycwant, many=True)
         return Response(serializer.data)
     elif request.method == 'DELETE':
-        staycwant.delete()
+        userid = request.GET.get('user')
+        cardid = request.GET.get('card')
+        toDelete = StayCWant.objects.filter(user=userid, photocard_id=cardid)
+        toDelete.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
 
 @api_view(['GET'])

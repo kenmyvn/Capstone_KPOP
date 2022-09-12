@@ -71,6 +71,11 @@ const PhotocardPage = (props) => {
     }
   };
 
+  const refresh = () => {
+    fetchStayCHave();
+    fetchStayCWant();
+  };
+
   return (
     <div className="container">
       <h1 className="versionheading"></h1>
@@ -87,6 +92,7 @@ const PhotocardPage = (props) => {
                 createHave={props.putHaveStayC}
                 deleteHave={props.deleteHaveStayC}
                 deleteWant={props.deleteWantStayC}
+                refresh={refresh}
                 key={stayc.id}
                 status={
                   staychave.includes(stayc.id)
@@ -111,6 +117,7 @@ const PhotocardPage = (props) => {
                 createHave={props.putHaveStayC}
                 deleteHave={props.deleteHaveStayC}
                 deleteWant={props.deleteWantStayC}
+                refresh={refresh}
                 key={stayc.id}
                 status={
                   staychave.includes(stayc.id)
