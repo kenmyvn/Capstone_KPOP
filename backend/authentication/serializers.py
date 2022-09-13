@@ -15,6 +15,7 @@ class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
 
         token["username"] = user.username
         token["first_name"] = user.first_name
+        token["image"] = user.image
 
         return token
 
@@ -51,17 +52,3 @@ class RegistrationSerializer(serializers.ModelSerializer):
         user.save()
 
         return user
-
-class UpdateProfileSerializer(serializers.ModelSerializer):
-    image = serializers.CharField(required=True)
-
-    class Meta:
-        model = User
-        fields = ('id', 'image')
-
-    def update(self, instance, validated_data):
-        instance.image = validated_data['image']
-
-        instance.save()
-
-        return instance

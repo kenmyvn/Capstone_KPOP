@@ -3,6 +3,7 @@ from django.contrib.auth.models import AbstractUser
 
 
 class User(AbstractUser):
+    image = models.CharField(max_length=1000)
     pass
-    image = models.CharField(max_length=300)
+    
     
